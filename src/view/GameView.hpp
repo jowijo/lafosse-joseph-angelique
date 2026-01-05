@@ -16,18 +16,16 @@ private:
     sf::RenderWindow window_;
     const float TILE_SIZE = 50.0f; 
 
-    // --- RESSOURCES (Doivent être déclarées AVANT les sprites/textes) ---
+    //  ATENTION : doivent être déclarés AVANT les sprites/textes
     sf::Texture rock_texture_; 
     sf::Texture wall_texture_;
     sf::Texture flag_texture_;
-    sf::Font font_; // La police doit exister avant les textes
+    sf::Font font_; 
     
-    // Maps de textures (pas de problème d'initialisation ici)
     std::map<Direction, sf::Texture> baba_textures_;
     std::map<WordType, sf::Texture> word_textures_;
 
-    // --- OBJETS GRAPHIQUES (Dépendent des ressources) ---
-    sf::Sprite sprite_generic_; // Sprite réutilisable
+    sf::Sprite sprite_generic_; // sprite réutilisable
     sf::Text win_text_;
     sf::RectangleShape next_button_;
     sf::Text next_button_text_;

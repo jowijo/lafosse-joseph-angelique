@@ -21,6 +21,7 @@ class Board : public ISubject {
 private:
     const int width_;
     const int height_;
+    
     std::vector<std::vector<std::list<Entity*>>> grid_;
     std::vector<IObserver*> observers_; 
     std::stack<BoardState> history_; 

@@ -132,7 +132,7 @@ void Board::check_win_condition() {
             for (Entity* other : entities_at_pos) {
                 if (other != player && other->get_properties().has(PropertyType::WIN)) {
                     is_win_ = true;
-                    std::cout << "VICTOIRE !" << std::endl;
+                    std::cout << "Victoire !" << std::endl;
                     return;
                 }
             }
@@ -178,19 +178,19 @@ bool Board::attempt_move(Direction direction) {
     save_state();
     bool at_least_one_moved = false;
 
-    for (Entity* player : you_entities) {
+    for (Entity* player :you_entities) {
         Position current_pos = player->get_position();
         Position next_pos = get_next_position(current_pos, direction);
         player->set_orientation(direction);
 
         std::list<Entity*> push_chain;
-        if (can_push_chain(next_pos, direction, push_chain)) {
+        if (can_push_chain(next_pos,direction, push_chain)) {
             for (Entity* pushed_entity : push_chain) {
                 Position target_pos = get_next_position(pushed_entity->get_position(), direction);
                 move_entity_to(pushed_entity, target_pos);
             }
             move_entity_to(player, next_pos);
-            at_least_one_moved = true;
+            at_least_one_moved =true;
         }
     }
 

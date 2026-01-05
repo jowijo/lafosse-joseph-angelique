@@ -22,7 +22,7 @@ public:
     void remove(PropertyType type) { active_properties.erase(type); }
     bool has(PropertyType type) const { return active_properties.count(type) > 0; }
     
-    // Helpers
+    // helpers
     bool has_you() const { return has(PropertyType::YOU); }
     bool has_push() const { return has(PropertyType::PUSH); }
 };

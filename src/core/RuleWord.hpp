@@ -5,9 +5,9 @@
 #include <map>
 
 enum class WordType {
-    BA, RO, WA, FL, // Sujets
-    IS,             // Verbe
-    YOU, PUSH, STOP, WIN // Propriétés
+    BA, RO, WA, FL, // sujets
+    IS,             // verbe
+    YOU, PUSH, STOP, WIN // propriétés
 };
 
 class RuleWord : public Entity {
@@ -27,7 +27,6 @@ public:
     bool is_solid() const override { return true; }
 };
 
-// Mappings globaux
 extern const std::map<WordType, std::string> WORD_NAMES;
 extern const std::map<WordType, PropertyType> ENTITY_WORD_MAPPING;
 

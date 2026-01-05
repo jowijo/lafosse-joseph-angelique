@@ -34,7 +34,7 @@ public:
     virtual bool is_solid() const { return false; }
 };
 
-// --- Classes Concrètes ---
+// Classes concrètes
 
 class Rock : public Entity {
 public:

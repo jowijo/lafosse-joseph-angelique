@@ -12,8 +12,7 @@ bool GameView::load_texture_only(sf::Texture& texture, const std::string& path) 
 }
 
 void GameView::scale_sprite_to_tile(sf::Sprite& sprite) {
-    // CORRECTION SFML 3.0 : getTexture() renvoie une référence, pas un pointeur
-    // On ne vérifie pas nullptr car une référence existe toujours
+
     const sf::Texture& tex = sprite.getTexture();
     
   
@@ -66,7 +65,6 @@ void GameView::load_assets() {
 
 GameView::GameView(const Board& board, const std::string& title) 
     : board_(board),
-      // Initialisation SFML 3.0 : Un sprite doit avoir une texture à la construction
       sprite_generic_(rock_texture_), 
       win_text_(font_),
       next_button_text_(font_)
@@ -185,8 +183,7 @@ void GameView::handle_input(const sf::Event& event) {
             case sf::Keyboard::Key::Up:    dir = Direction::UP; break;
             case sf::Keyboard::Key::Down:  dir = Direction::DOWN; break;
             case sf::Keyboard::Key::Left:  dir = Direction::LEFT; break;
-            case sf::Keyboard::Key::Right: dir = Direction::RIGHT; break;
-            case sf::Keyboard::Key::A:     
+            case sf::Keyboard::Key::Right: dir = Direction::RIGHT; break;    
             case sf::Keyboard::Key::Z:     
                 const_cast<Board&>(board_).undo(); 
                 break;

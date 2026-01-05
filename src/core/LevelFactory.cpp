@@ -36,7 +36,7 @@ void LevelFactory::build_level_1(Board* board) {
 void LevelFactory::build_level_2(Board* board) {
     for(int x=0; x<board->get_width(); ++x) { board->add_entity(new Wall(x,0)); board->add_entity(new Wall(x,board->get_height()-1)); }
     for(int y=1; y<board->get_height()-1; ++y) { board->add_entity(new Wall(0,y)); board->add_entity(new Wall(board->get_width()-1,y)); }
-    for(int x=4; x<=12; ++x) { board->add_entity(new Wall(x,3)); board->add_entity(new Wall(x,9)); }
+    for(int x=4; x<=12; ++x) {board->add_entity(new Wall(x,3)); board->add_entity(new Wall(x,9)); }
     for(int y=4; y<=8; ++y) { board->add_entity(new Wall(4,y)); board->add_entity(new Wall(12,y)); }
 
     board->add_entity(new RuleWord(WordType::BA,6,4)); board->add_entity(new RuleWord(WordType::IS,7,4)); board->add_entity(new RuleWord(WordType::YOU,8,4));
@@ -73,6 +73,7 @@ void LevelFactory::build_level_4(Board* board) {
 
     for(int x=12; x<16; ++x) board->add_entity(new Wall(x,4));
     for(int x=10; x<14; ++x) board->add_entity(new Wall(x,8));
+
     board->add_entity(new Rock(11,6)); 
     board->add_entity(new Flag(16,2)); 
     board->add_entity(new RuleWord(WordType::FL,11,10)); board->add_entity(new RuleWord(WordType::IS,12,10)); board->add_entity(new RuleWord(WordType::WIN,13,10));

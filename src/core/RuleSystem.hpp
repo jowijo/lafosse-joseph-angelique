@@ -14,6 +14,9 @@ public:
 
 private:
     std::vector<Rule> find_horizontal_rules(const Board& board);
+    // methode pour verif verticale aussi
+    std::vector<Rule> find_vertical_rules(const Board& board);
+    
     bool is_subject(WordType word) const;
     bool is_property_predicate(WordType word) const;
 };

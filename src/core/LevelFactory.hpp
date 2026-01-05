@@ -7,7 +7,7 @@ class LevelFactory {
 public:
     static Board* create_level(int level_id);
     
-    // NOUVEAU : Permet au menu de savoir combien de niveaux afficher
+    //permet au menu de savoir combien de niveaux afficher
     static int get_level_count() { return 5; }
 
 private:
